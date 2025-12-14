@@ -4,874 +4,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Bisma Malik - Resume</title>
     <style>
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        :root {
-            --white: #ffffff;
-            --light-gray: #f5f5f7;
-            --medium-gray: #e8e8e8;
-            --dark-gray: #8e8e93;
-            --black: #1d1d1f;
-            --accent: #000000;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
-            background-color: var(--white);
-            color: var(--black);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fafafa;
+            color: #2c2c2c;
             line-height: 1.6;
-            font-weight: 300;
-            overflow-x: hidden;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .resume {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            background: #fff;
+            padding: 50px 60px 40px;
+            border-bottom: 3px solid #2c2c2c;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .intro {
+            color: #4a4a4a;
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        nav {
+            background: #f5f5f5;
+            padding: 0 60px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            display: block;
+            padding: 16px 0;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #1a1a1a;
+            border-bottom-color: #2c2c2c;
+        }
+
+        .content {
+            padding: 50px 60px;
         }
 
         section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--medium-gray);
+            margin-bottom: 50px;
         }
 
         section:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: 500;
-            letter-spacing: -0.5px;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border: 1px solid var(--black);
-            color: var(--black);
-            font-weight: 400;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+        h2 {
+            font-size: 13px;
             text-transform: uppercase;
-            transition: var(--transition);
-            background-color: transparent;
-            cursor: pointer;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 24px;
+            font-weight: 600;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        .btn:hover {
-            background-color: var(--black);
-            color: var(--white);
-        }
-
-        .btn-filled {
-            background-color: var(--black);
-            color: var(--white);
-        }
-
-        .btn-filled:hover {
-            background-color: transparent;
-            color: var(--black);
-        }
-
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--medium-gray);
-            padding: 20px 0;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--dark-gray);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 40px;
-        }
-
-        .nav-links a {
-            font-size: 0.95rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            background-color: var(--black);
-            bottom: 0;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.4rem;
-            color: var(--black);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 100px;
-            border-bottom: 1px solid var(--medium-gray);
-        }
-
-        .hero-content {
+        .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.2rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            background-color: var(--light-gray);
-            border: 1px solid var(--medium-gray);
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .about-text p {
-            margin-bottom: 25px;
-            color: var(--dark-gray);
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 24px;
         }
 
         .skill-item {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--medium-gray);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            border: 1px solid var(--medium-gray);
-            transition: var(--transition);
-            overflow: hidden;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--black);
-        }
-
-        .project-image {
-            height: 200px;
-            background-color: var(--light-gray);
-            border-bottom: 1px solid var(--medium-gray);
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-info {
-            padding: 25px;
-        }
-
-        .project-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            background: #f9f9f9;
+            padding: 14px 18px;
+            border-left: 3px solid #2c2c2c;
+            font-size: 15px;
+            color: #4a4a4a;
             font-weight: 500;
         }
 
-        .project-info p {
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+        .project {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
-        .project-tags span {
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            background-color: var(--light-gray);
-            color: var(--dark-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Experience Section */
-        .timeline {
-            margin-top: 50px;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 100%;
-            background-color: var(--medium-gray);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .timeline-date {
-            flex: 0 0 40%;
-            padding: 0 40px;
-            text-align: right;
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-date {
-            text-align: left;
-        }
-
-        .timeline-content {
-            flex: 0 0 60%;
-            padding: 0 40px;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.3rem;
+        .project h3 {
+            font-size: 20px;
             margin-bottom: 8px;
-            font-weight: 500;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
-        .timeline-content h4 {
-            font-size: 0.95rem;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .project p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
         }
 
-        .timeline-content p {
-            color: var(--dark-gray);
-            font-size: 0.95rem;
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--white);
-            border: 2px solid var(--black);
-            z-index: 1;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .contact-content p {
-            color: var(--dark-gray);
-            margin-bottom: 40px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-link {
+        .contact-item {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--dark-gray);
+        }
+
+        .contact-label {
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            color: #999;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
-        .contact-link:hover {
-            color: var(--black);
+        .contact-value {
+            color: #2c2c2c;
+            font-size: 15px;
+            word-break: break-word;
         }
 
-        .contact-link i {
-            font-size: 1.4rem;
+        .contact-value a {
+            color: #2c2c2c;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.3s;
         }
 
-        /* Footer */
+        .contact-value a:hover {
+            border-bottom-color: #2c2c2c;
+        }
+
         footer {
-            background-color: var(--light-gray);
-            padding: 60px 0 30px;
+            background: #f5f5f5;
+            padding: 24px 60px;
             text-align: center;
+            font-size: 13px;
+            color: #999;
+            border-top: 1px solid #e0e0e0;
         }
 
-        .footer-content {
-            margin-bottom: 40px;
-        }
-
-        .copyright {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            padding-top: 30px;
-            border-top: 1px solid var(--medium-gray);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-
-            .hero-content,
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+        @media print {
+            body {
+                background: #fff;
             }
 
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .resume {
+                box-shadow: none;
+                margin: 0;
             }
 
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                flex-direction: row !important;
-            }
-
-            .timeline-date {
-                flex: 0 0 30%;
-                text-align: right !important;
-            }
-
-            .timeline-content {
-                flex: 0 0 70%;
-            }
-
-            .timeline-item::before {
-                left: 24px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.8rem;
+            nav {
+                display: none;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-                transform: translateY(-150%);
-                transition: var(--transition);
-                border-bottom: 1px solid var(--medium-gray);
-                z-index: 999;
+
+            header,
+            .content,
+            nav,
+            footer {
+                padding-left: 30px;
+                padding-right: 30px;
             }
 
-            .nav-links.active {
-                transform: translateY(0);
+            h1 {
+                font-size: 32px;
             }
 
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .projects-grid {
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                flex-direction: column;
+            nav ul {
                 gap: 20px;
+                overflow-x: auto;
             }
 
-            .hero {
-                padding-top: 140px;
-                padding-bottom: 80px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.4rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-
-            .timeline-date,
-            .timeline-content {
-                padding: 0 20px;
-            }
-
-            .timeline-date {
-                flex: 0 0 35%;
-            }
-
-            .timeline-content {
-                flex: 0 0 65%;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .about-text h2,
-            .contact-content h2 {
-                font-size: 1.8rem;
+            .contact-info {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">ALEX<span>MORGAN</span></a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="resume">
+        <header>
+            <h1>Bisma Malik</h1>
+            <p class="title">Frontend Developer & UI/UX Designer</p>
+            <p class="intro">I build clean, user-focused web interfaces with modern design principles.</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <section id="about">
+                <h2>About</h2>
+                <p style="color: #4a4a4a; font-size: 15px; line-height: 1.8;">
+                    I am a beginner-level frontend developer and UI/UX designer with a strong interest in minimal design
+                    and usability. I work with HTML, CSS, JavaScript, and modern layout techniques to create responsive
+                    and professional websites.
+                </p>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">HTML5</div>
+                    <div class="skill-item">CSS3</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">Responsive Design</div>
+                    <div class="skill-item">UI / UX Design</div>
+                    <div class="skill-item">WordPress</div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <div class="project">
+                    <h3>Business Website</h3>
+                    <p>Minimal multi-page business website with clean layout and responsive design.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Portfolio Website</h3>
+                    <p>Personal portfolio showcasing projects, skills, and contact information.</p>
+                </div>
+
+                <div class="project">
+                    <h3>Landing Page</h3>
+                    <p>Simple landing page focused on conversion and visual clarity.</p>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value"><a href="mailto:yourname@email.com">yourname@email.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value"><a href="https://github.com/yourusername"
+                                target="_blank">github.com/yourusername</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Fiverr</span>
+                        <span class="contact-value"><a href="https://fiverr.com/yourprofile"
+                                target="_blank">fiverr.com/yourprofile</a></span>
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Digital Designer & Frontend Developer</h1>
-                    <p>I create clean, functional, and visually compelling digital experiences. With a focus on
-                        minimalism and user-centric design, I transform complex problems into simple, beautiful
-                        solutions.</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-filled">View Projects</a>
-                        <a href="#contact" class="btn" style="margin-left: 15px;">Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <!-- Placeholder for hero image -->
-                    <div
-                        style="width: 100%; height: 100%; background-color: var(--light-gray); display: flex; align-items: center; justify-content: center; color: var(--dark-gray);">
-                        <i class="fas fa-user" style="font-size: 5rem;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <footer>
+            © 2024 Bisma Malik. All rights reserved.
+        </footer>
+    </div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>I'm a digital designer and frontend developer with over 5 years of experience creating clean,
-                        functional interfaces for web and mobile applications. My approach combines aesthetic minimalism
-                        with technical precision.</p>
-                    <p>I believe in the power of simplicity and focus on creating experiences that are both beautiful
-                        and intuitive. Every pixel, every line of code serves a purpose.</p>
-
-                    <div class="skills-list">
-                        <div class="skill-item">UI/UX Design</div>
-                        <div class="skill-item">Frontend Development</div>
-                        <div class="skill-item">Responsive Design</div>
-                        <div class="skill-item">Prototyping</div>
-                        <div class="skill-item">User Research</div>
-                        <div class="skill-item">Design Systems</div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <!-- Placeholder for about image -->
-                    <div
-                        style="width: 100%; height: 400px; background-color: var(--light-gray); border: 1px solid var(--medium-gray); display: flex; align-items: center; justify-content: center; color: var(--dark-gray);">
-                        <i class="fas fa-laptop-code" style="font-size: 4rem;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 20px; font-weight: 500;">Selected Projects
-            </h2>
-            <p style="text-align: center; color: var(--dark-gray); max-width: 600px; margin: 0 auto 50px;">A collection
-                of my recent work that demonstrates my design philosophy and technical capabilities.</p>
-
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <!-- Placeholder for project image -->
-                        <div
-                            style="width: 100%; height: 100%; background-color: var(--light-gray); display: flex; align-items: center; justify-content: center; color: var(--dark-gray);">
-                            <i class="fas fa-mobile-alt" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>FinTech Dashboard</h3>
-                        <p>A clean, intuitive dashboard for financial analytics with real-time data visualization.</p>
-                        <div class="project-tags">
-                            <span>UI Design</span>
-                            <span>React</span>
-                            <span>Data Viz</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <!-- Placeholder for project image -->
-                        <div
-                            style="width: 100%; height: 100%; background-color: var(--light-gray); display: flex; align-items: center; justify-content: center; color: var(--dark-gray);">
-                            <i class="fas fa-shopping-bag" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Minimal E-commerce</h3>
-                        <p>An e-commerce platform with a focus on clean design and seamless user experience.</p>
-                        <div class="project-tags">
-                            <span>UX Research</span>
-                            <span>Web Design</span>
-                            <span>E-commerce</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <!-- Placeholder for project image -->
-                        <div
-                            style="width: 100%; height: 100%; background-color: var(--light-gray); display: flex; align-items: center; justify-content: center; color: var(--dark-gray);">
-                            <i class="fas fa-palette" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Design System</h3>
-                        <p>A comprehensive design system for consistent digital product development.</p>
-                        <div class="project-tags">
-                            <span>Design Systems</span>
-                            <span>Figma</span>
-                            <span>Documentation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 20px; font-weight: 500;">Experience</h2>
-            <p style="text-align: center; color: var(--dark-gray); max-width: 600px; margin: 0 auto 50px;">My
-                professional journey and key milestones in design and development.</p>
-
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Senior Product Designer</h3>
-                        <h4>Nova Digital Agency</h4>
-                        <p>Leading design for enterprise client projects, focusing on user experience and interface
-                            design. Established design systems and mentored junior designers.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 - 2022</div>
-                    <div class="timeline-content">
-                        <h3>UI/UX Designer</h3>
-                        <h4>Studio Minimal</h4>
-                        <p>Designed digital products for startups and established companies. Collaborated with
-                            developers to implement responsive, accessible interfaces.</p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Frontend Developer</h3>
-                        <h4>PixelCraft Studio</h4>
-                        <p>Transformed design mockups into functional web applications. Focused on performance,
-                            accessibility, and cross-browser compatibility.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Get In Touch</h2>
-                <p>I'm always open to discussing new opportunities, creative projects, or just having a conversation
-                    about design and technology.</p>
-                <a href="mailto:hello@alexmorgan.design" class="btn btn-filled"
-                    style="margin-top: 20px;">hello@alexmorgan.design</a>
-
-                <div class="contact-links">
-                    <a href="https://linkedin.com" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        GitHub
-                    </a>
-                    <a href="https://dribbble.com" class="contact-link" target="_blank">
-                        <i class="fab fa-dribbble"></i>
-                        Dribbble
-                    </a>
-                    <a href="https://twitter.com" class="contact-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        Twitter
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div style="max-width: 500px; margin: 0 auto;">
-                    <h3 style="font-size: 1.4rem; margin-bottom: 20px; font-weight: 500;">ALEX MORGAN</h3>
-                    <p style="color: var(--dark-gray); margin-bottom: 30px;">Digital designer & frontend developer
-                        creating minimal, functional experiences.</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Alex Morgan. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                // Remove active class from all links
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                // Scroll to section
+                const offsetTop = target.offsetTop - 60;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Header background on scroll
+        // Update active nav on scroll
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-            } else {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
+            const sections = document.querySelectorAll('section');
+            const scrollPos = window.scrollY + 100;
 
-        // Simple project hover effect enhancement
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
-            });
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
 
-            card.addEventListener('mouseleave', function () {
-                this.style.boxShadow = 'none';
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                    document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+                }
             });
         });
     </script>
