@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bisma Malik | Portfolio</title>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #111111;
+            --muted: #6b6b6b;
+            --border: #e5e5e5;
+            --accent: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        header p {
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        nav {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            border-color: var(--text);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .about p {
+            max-width: 700px;
+            color: var(--muted);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 12px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid var(--border);
+            padding: 16px;
+        }
+
+        .project h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Bisma Malik</h1>
+            <p>Frontend Developer & UI/UX Designer. I build clean, user-focused web interfaces with modern design
+                principles.</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section id="about" class="about">
+            <h2>About</h2>
+            <p>
+                I am a beginner-level frontend developer and UI/UX designer with a strong interest in minimal design and
+                usability.
+                I work with HTML, CSS, JavaScript, and modern layout techniques to create responsive and professional
+                websites.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">HTML5</div>
+                <div class="skill">CSS3</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Responsive Design</div>
+                <div class="skill">UI / UX Design</div>
+                <div class="skill">WordPress</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Business Website</h3>
+                    <p>Minimal multi-page business website with clean layout and responsive design.</p>
+                </div>
+                <div class="project">
+                    <h3>Portfolio Website</h3>
+                    <p>Personal portfolio showcasing projects, skills, and contact information.</p>
+                </div>
+                <div class="project">
+                    <h3>Landing Page</h3>
+                    <p>Simple landing page focused on conversion and visual clarity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Email: yourname@email.com</p>
+            <p>GitHub: github.com/yourusername</p>
+            <p>Fiverr: fiverr.com/yourprofile</p>
+        </section>
+
+        <footer>
+            © 2025 Bisma Malik. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
